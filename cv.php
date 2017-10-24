@@ -733,7 +733,6 @@ if (loggedin()) {
             <div class="col-sm-12">
                 <div class="form-group text-center">
                     <input type="submit" name="cv_submit" id="test_submit" class="btn btn-success btn-md" value="Submit">
-                    <a href="" id="tst_submit2">Tst Submit</a>
                 </div>
             </div>
         </div>
