@@ -1,0 +1,523 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    /*border: 0;*/
+    /*font-size: 100%;*/
+    /*font: inherit;*/
+    vertical-align: baseline;
+}
+
+body {
+    /*background-image: url(../images/IOM.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100%;*/
+    line-height: 1;
+}
+
+
+/* ****************
+End CSS reset code
+**************** */
+
+/******************
+Bootstrap 5 column
+******************/
+
+
+.col-xs-5th-1, .col-xs-5th-2, .col-xs-5th-3, .col-xs-5th-4 {
+    float: left;
+}
+
+.col-xs-5th-5 {
+    float: left;
+    width: 100%;
+}
+
+.col-xs-5th-4 {
+    width: 80%;
+}
+
+.col-xs-5th-3 {
+    width: 60%;
+}
+
+.col-xs-5th-2 {
+    width: 40%;
+}
+
+.col-xs-5th-1 {
+    width: 20%;
+}
+
+.col-xs-5th-pull-5 {
+    right: 100%;
+}
+
+.col-xs-5th-pull-4 {
+    right: 80%;
+}
+
+.col-xs-5th-pull-3 {
+    right: 60%;
+}
+
+.col-xs-5th-pull-2 {
+    right: 40%;
+}
+
+.col-xs-5th-pull-1 {
+    right: 20%;
+}
+
+.col-xs-5th-pull-0 {
+    right: auto;
+}
+
+.col-xs-5th-push-5 {
+    left: 100%;
+}
+
+.col-xs-5th-push-4 {
+    left: 80%;
+}
+
+.col-xs-5th-push-3 {
+    left: 60%;
+}
+
+.col-xs-5th-push-2 {
+    left: 40%;
+}
+
+.col-xs-5th-push-1 {
+    left: 20%;
+}
+
+.col-xs-5th-push-0 {
+    left: auto;
+}
+
+.col-xs-5th-offset-5 {
+    margin-left: 100%;
+}
+
+.col-xs-5th-offset-4 {
+    margin-left: 80%;
+}
+
+.col-xs-5th-offset-3 {
+    margin-left: 60%;
+}
+
+.col-xs-5th-offset-2 {
+    margin-left: 40%;
+}
+
+.col-xs-5th-offset-1 {
+    margin-left: 20%;
+}
+
+.col-xs-5th-offset-0 {
+    margin-left: 0%;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5th-1, .col-sm-5th-2, .col-sm-5th-3, .col-sm-5th-4 {
+        float: left;
+    }
+
+    .col-sm-5th-5 {
+        float: left;
+        width: 100%;
+    }
+
+    .col-sm-5th-4 {
+        width: 80%;
+    }
+
+    .col-sm-5th-3 {
+        width: 60%;
+    }
+
+    .col-sm-5th-2 {
+        width: 40%;
+    }
+
+    .col-sm-5th-1 {
+        width: 20%;
+    }
+
+    .col-sm-5th-pull-5 {
+        right: 100%;
+    }
+
+    .col-sm-5th-pull-4 {
+        right: 80%;
+    }
+
+    .col-sm-5th-pull-3 {
+        right: 60%;
+    }
+
+    .col-sm-5th-pull-2 {
+        right: 40%;
+    }
+
+    .col-sm-5th-pull-1 {
+        right: 20%;
+    }
+
+    .col-sm-5th-pull-0 {
+        right: auto;
+    }
+
+    .col-sm-5th-push-5 {
+        left: 100%;
+    }
+
+    .col-sm-5th-push-4 {
+        left: 80%;
+    }
+
+    .col-sm-5th-push-3 {
+        left: 60%;
+    }
+
+    .col-sm-5th-push-2 {
+        left: 40%;
+    }
+
+    .col-sm-5th-push-1 {
+        left: 20%;
+    }
+
+    .col-sm-5th-push-0 {
+        left: auto;
+    }
+
+    .col-sm-5th-offset-5 {
+        margin-left: 100%;
+    }
+
+    .col-sm-5th-offset-4 {
+        margin-left: 80%;
+    }
+
+    .col-sm-5th-offset-3 {
+        margin-left: 60%;
+    }
+
+    .col-sm-5th-offset-2 {
+        margin-left: 40%;
+    }
+
+    .col-sm-5th-offset-1 {
+        margin-left: 20%;
+    }
+
+    .col-sm-5th-offset-0 {
+        margin-left: 0%;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-5th-1, .col-md-5th-2, .col-md-5th-3, .col-md-5th-4 {
+        float: left;
+    }
+
+    .col-md-5th-5 {
+        float: left;
+        width: 100%;
+    }
+
+    .col-md-5th-4 {
+        width: 80%;
+    }
+
+    .col-md-5th-3 {
+        width: 60%;
+    }
+
+    .col-md-5th-2 {
+        width: 40%;
+    }
+
+    .col-md-5th-1 {
+        width: 20%;
+    }
+
+    .col-md-5th-pull-5 {
+        right: 100%;
+    }
+
+    .col-md-5th-pull-4 {
+        right: 80%;
+    }
+
+    .col-md-5th-pull-3 {
+        right: 60%;
+    }
+
+    .col-md-5th-pull-2 {
+        right: 40%;
+    }
+
+    .col-md-5th-pull-1 {
+        right: 20%;
+    }
+
+    .col-md-5th-pull-0 {
+        right: auto;
+    }
+
+    .col-md-5th-push-5 {
+        left: 100%;
+    }
+
+    .col-md-5th-push-4 {
+        left: 80%;
+    }
+
+    .col-md-5th-push-3 {
+        left: 60%;
+    }
+
+    .col-md-5th-push-2 {
+        left: 40%;
+    }
+
+    .col-md-5th-push-1 {
+        left: 20%;
+    }
+
+    .col-md-5th-push-0 {
+        left: auto;
+    }
+
+    .col-md-5th-offset-5 {
+        margin-left: 100%;
+    }
+
+    .col-md-5th-offset-4 {
+        margin-left: 80%;
+    }
+
+    .col-md-5th-offset-3 {
+        margin-left: 60%;
+    }
+
+    .col-md-5th-offset-2 {
+        margin-left: 40%;
+    }
+
+    .col-md-5th-offset-1 {
+        margin-left: 20%;
+    }
+
+    .col-md-5th-offset-0 {
+        margin-left: 0%;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-5th-1, .col-lg-5th-2, .col-lg-5th-3, .col-lg-5th-4 {
+        float: left;
+    }
+
+    .col-lg-5th-5 {
+        float: left;
+        width: 100%;
+    }
+
+    .col-lg-5th-4 {
+        width: 80%;
+    }
+
+    .col-lg-5th-3 {
+        width: 60%;
+    }
+
+    .col-lg-5th-2 {
+        width: 40%;
+    }
+
+    .col-lg-5th-1 {
+        width: 20%;
+    }
+
+    .col-lg-5th-pull-5 {
+        right: 100%;
+    }
+
+    .col-lg-5th-pull-4 {
+        right: 80%;
+    }
+
+    .col-lg-5th-pull-3 {
+        right: 60%;
+    }
+
+    .col-lg-5th-pull-2 {
+        right: 40%;
+    }
+
+    .col-lg-5th-pull-1 {
+        right: 20%;
+    }
+
+    .col-lg-5th-pull-0 {
+        right: auto;
+    }
+
+    .col-lg-5th-push-5 {
+        left: 100%;
+    }
+
+    .col-lg-5th-push-4 {
+        left: 80%;
+    }
+
+    .col-lg-5th-push-3 {
+        left: 60%;
+    }
+
+    .col-lg-5th-push-2 {
+        left: 40%;
+    }
+
+    .col-lg-5th-push-1 {
+        left: 20%;
+    }
+
+    .col-lg-5th-push-0 {
+        left: auto;
+    }
+
+    .col-lg-5th-offset-5 {
+        margin-left: 100%;
+    }
+
+    .col-lg-5th-offset-4 {
+        margin-left: 80%;
+    }
+
+    .col-lg-5th-offset-3 {
+        margin-left: 60%;
+    }
+
+    .col-lg-5th-offset-2 {
+        margin-left: 40%;
+    }
+
+    .col-lg-5th-offset-1 {
+        margin-left: 20%;
+    }
+
+    .col-lg-5th-offset-0 {
+        margin-left: 0%;
+    }
+}
+
+/******************
+End Bootstrap 5 column
+******************/
+
+
+.login-form {
+    padding: 0px 30px 20px;
+    border: 1px solid #ededed;
+    margin-top: 50px;
+    box-shadow: 0 0 3px rgba(209, 209, 209, 0.47);
+    transition: all .3s;
+    background: #fefefe;
+}
+
+.login-form:hover{
+    box-shadow: 0 15px 15px -9px rgba(61, 87, 184, 0.63);
+    transition: all .3s;
+}
+
+.error_msg{
+    color: red;
+    font-size: 11px;
+}
+
+
+
+
+/********
+ cv form
+ ********/
+
+/*Hiding form*/
+.personal_details_2nd, .academic_qualification_3rd, .job_details_4th, .thesis_5th, .training_6th, .language_skill_7th, .itSkill_8th, .technical_skill_9th, .reference_10th, .other_details_11th{
+    display: none;
+}
+
+.required_start{
+    color: red;
+}
+
+
+.edu_btn_label {
+    height: 24px;
+}
+
+.control-label {
+    text-align: left !important;
+}
+
+.upper_label {
+    margin-bottom: 3px !important;
+    text-align: left !Important;
+}
+
+fieldset{
+    border: 1px ridge #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 12px 1.2em 12px !important;
+    -webkit-box-shadow: 0px 0px 2px #ededed;
+    box-shadow: 0px 0px 2px #ededed;
+}
+
+legend{
+    background: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: left;
+    width: auto;
+    padding: 0 10px; /* To give a bit of padding on the left and right */
+    border-bottom: none;
+    margin-top: 17px;
+}
+
+
+
+#job_dynamicFields {
+    border-right: 1px solid #c3312d;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.job_remove_btn {
+    position: absolute;
+    right: -19px;
+    top: 25px;
+}
+
+
+
+/* Language section */
+
+.main-language-section, .other-language-section {
+    border: 1px solid #ededed;
+    padding: 15px;
+}
+
+.reference_remove_btn {
+    position: absolute;
+    right: -25px;
+    top: 64px;
+}
+
+
+
+
