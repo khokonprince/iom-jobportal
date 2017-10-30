@@ -584,7 +584,7 @@ if (loggedin()) {
                     <label for="mobile1" class="control-label col-sm-4">Mobile One(1) <span class="required_start">*</span></label>
 
                     <div class="col-sm-8">
-                        <input type="text" name="mobile1" id="mobile1" value="" class="form-control input-sm" maxlength="17" pattern="[0-9]{11,17}" title="phone number">
+                        <input type="text" name="mobile1" id="mobile1" value="" class="form-control input-sm" maxlength="17" pattern="[0-9]{11,17}" title="phone number" required>
                         <span class="error_msg" id="mobile1_error_massage"></span>
                     </div>
                 </div>
@@ -727,15 +727,6 @@ if (loggedin()) {
             </div>
         </div>
         <!-- end of row -->
-
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="form-group text-center">
-                    <input type="submit" name="cv_submit" id="test_submit" class="btn btn-success btn-md" value="Submit">
-                </div>
-            </div>
-        </div>
 
     </div>
     <!-- end of .contact_details_1st -->
@@ -891,11 +882,11 @@ if (loggedin()) {
         </div>
 
         <div class="col-sm-6">
-            <div class="form-group">
+            <div class="form-group" id="disability_details_textarea">
                 <label for="disability_details" class="control-label col-sm-4">Disability Details</label>
-
                 <div class="col-sm-8">
-                    <textarea name="disability_details" id="disability_details" class="form-control input-sm"><?php if(isset($disability_details)){echo $disability_details;} ?></textarea>
+                    <textarea data-disability_details="select" name="disability_details" id="disability_details" class="form-control input-sm"><?php if(isset($disability_details)){echo $disability_details;} ?></textarea>
+                    <span class="error_msg" id="disability_details_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -931,6 +922,7 @@ if (loggedin()) {
 
                     <div class="col-sm-8">
                         <input type="text" name="dependents_name[]" id="dependents_name" value="<?php if(isset($dependents_name)){foreach ($dependents_name as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                        <span class="error_msg" id="dependents_name_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -941,6 +933,7 @@ if (loggedin()) {
 
                     <div class="col-sm-8">
                         <input type="date" name="dependents_birth_date[]" id="dependents_birth_date" value="<?php if(isset($dependents_birth_date)){foreach ($dependents_birth_date as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                        <span class="error_msg" id="dependents_birth_date_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -951,6 +944,7 @@ if (loggedin()) {
 
                     <div class="col-sm-8">
                         <input type="text" name="dependents_age[]" id="dependents_age" value="<?php if(isset($dependents_age)){foreach ($dependents_age as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                        <span class="error_msg" id="dependents_age_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -961,6 +955,7 @@ if (loggedin()) {
 
                     <div class="col-sm-8">
                         <input type="text" name="dependents_relation[]" id="dependents_relation" value="<?php if(isset($dependents_relation)){foreach ($dependents_relation as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                        <span class="error_msg" id="dependents_relation_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -1017,6 +1012,7 @@ if (loggedin()) {
                                 <option value="SSC(Regular)" <?php if(isset($degree)){foreach ($degree as $value){if($value == 'SSC(Regular)'){echo 'selected';}}} ?> >SSC(Regular)</option>
                             </select>
                             <?php if(isset($degree_error)){echo $degree_error;} ?>
+                            <span class="error_msg" id="degree_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1028,6 +1024,7 @@ if (loggedin()) {
                         <div class="col-sm-12">
                             <input type="text" name="major_sub[]" id="major_sub" value="<?php if(isset($major_sub)){foreach ($major_sub as $value){echo $value; break;}} ?>" class="form-control input-sm">
                             <?php if(isset($major_sub_error)){echo $major_sub_error;} ?>
+                            <span class="error_msg" id="major_sub_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1039,6 +1036,7 @@ if (loggedin()) {
                         <div class="col-sm-12">
                             <input type="text" name="grade[]" id="grade" value="<?php if(isset($grade)){foreach ($grade as $value){echo $value; break;}} ?>" class="form-control input-sm">
                             <?php if(isset($grade_error)){echo $grade_error;} ?>
+                            <span class="error_msg" id="grade_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1050,6 +1048,7 @@ if (loggedin()) {
                         <div class="col-sm-12">
                             <input type="text" name="passing_year[]" id="passing_year" value="<?php if(isset($passing_year)){foreach ($passing_year as $value){echo $value; break;}} ?>" class="form-control input-sm">
                             <?php if(isset($passing_year_error)){echo $passing_year_error;} ?>
+                            <span class="error_msg" id="passing_year_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1061,6 +1060,7 @@ if (loggedin()) {
                         <div class="col-sm-12">
                             <input type="text" name="institution[]" id="institution" value="<?php if(isset($institution)){foreach ($institution as $value){echo $value; break;}} ?>" class="form-control input-sm">
                             <?php if(isset($institution_error)){echo $institution_error;} ?>
+                            <span class="error_msg" id="institution_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1091,6 +1091,14 @@ if (loggedin()) {
             </div>
         </div>
 
+<!--        <div class="row">-->
+<!--            <div class="col-sm-12">-->
+<!--                <div class="form-group text-center">-->
+<!--                    <input type="submit"  name="cv_submit" id="" class="btn btn-success btn-md" value="Submit">-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
     </div>
     <!-- end of #academic_qualification_3rd -->
 
@@ -1111,6 +1119,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="text" name="job_org[]" id="job_org" value="<?php if(isset($job_org)){foreach ($job_org as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_org_error)){echo $job_org_error;}?>
+                    <span class="error_msg" id="job_org_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1122,6 +1131,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="text" name="job_address[]" id="job_address" value="<?php if(isset($job_org)){foreach ($job_org as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_address_error)){echo $job_address_error;}?>
+                    <span class="error_msg" id="job_address_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1133,6 +1143,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="text" name="job_lastPosition[]" id="job_lastPosition" value="<?php if(isset($job_lastPosition)){foreach ($job_lastPosition as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_lastPosition_error)){echo $job_lastPosition_error;}?>
+                    <span class="error_msg" id="job_lastPosition_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1144,6 +1155,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="date" name="job_from[]" id="job_from" value="<?php if(isset($job_from)){foreach ($job_from as $value){echo $value; break;}} ?>" class="form-control input-sm" placeholder="yyyy-mm-dd">
                     <?php if(isset($job_from_error)){echo $job_from_error;} ?>
+                    <span class="error_msg" id="job_from_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1155,6 +1167,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="date" name="job_to[]" id="job_to" value="<?php if(isset($job_to)){foreach ($job_to as $value){echo $value; break;}} ?>" class="form-control input-sm" placeholder="yyyy-mm-dd">
                     <?php if(isset($job_to_error)){echo $job_to_error;} ?>
+                    <span class="error_msg" id="job_to_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1166,6 +1179,7 @@ if (loggedin()) {
                 <div class="col-sm-12">
                     <input type="text" name="job_contact[]" id="job_contact" value="<?php if(isset($job_contact)){foreach ($job_contact as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_contact_error)){echo $job_contact_error;} ?>
+                    <span class="error_msg" id="job_contact_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1186,6 +1200,7 @@ if (loggedin()) {
                 <div class="col-sm-8">
                     <input type="text" name="job_salary[]" id="job_salary" value="<?php if(isset($job_salary)){foreach ($job_salary as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_salary_error)){echo $job_salary_error;} ?>
+                    <span class="error_msg" id="job_salary_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1197,6 +1212,7 @@ if (loggedin()) {
                 <div class="col-sm-7">
                     <input type="text" name="job_allowance[]" id="job_allowance" value="<?php if(isset($job_allowance)){foreach ($job_allowance as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_allowance_error)){echo $job_allowance_error;} ?>
+                    <span class="error_msg" id="job_allowance_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1208,6 +1224,7 @@ if (loggedin()) {
                 <div class="col-sm-8">
                     <input type="text" name="job_total[]" id="job_total" value="<?php if(isset($job_total)){foreach ($job_total as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_total_error)){echo $job_total_error;} ?>
+                    <span class="error_msg" id="job_total_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1219,6 +1236,7 @@ if (loggedin()) {
                 <div class="col-sm-8">
                     <input type="text" name="job_staff[]" id="job_staff" value="<?php if(isset($job_staff)){foreach ($job_staff as $value){echo $value; break;}} ?>" class="form-control input-sm">
                     <?php if(isset($job_staff_error)){echo $job_staff_error;}?>
+                    <span class="error_msg" id="job_staff_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1239,6 +1257,7 @@ if (loggedin()) {
                     <div class="col-sm-8">
                         <input type="text" name="job_supervisor_name[]" id="job_supervisor_name" value="<?php if(isset($job_supervisor_name)){foreach ($job_supervisor_name as $value){echo $value; break;}} ?>" class="form-control input-sm">
                         <?php if(isset($job_supervisor_name_error)){echo $job_supervisor_name_error;}?>
+                        <span class="error_msg" id="job_supervisor_name_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -1250,6 +1269,7 @@ if (loggedin()) {
                     <div class="col-sm-7">
                         <input type="text" name="job_supervisor_designation[]" id="job_supervisor_designation" value="<?php if(isset($job_supervisor_designation)){foreach ($job_supervisor_designation as $value){echo $value; break;}} ?>" class="form-control input-sm">
                         <?php if(isset($job_supervisor_designation_error)){echo$job_supervisor_designation_error;} ?>
+                        <span class="error_msg" id="job_supervisor_designation_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -1261,6 +1281,7 @@ if (loggedin()) {
                     <div class="col-sm-8">
                         <input type="text" name="job_supervisor_contact[]" id="job_supervisor_contact" value="<?php if(isset($job_supervisor_contact)){foreach ($job_supervisor_contact as $value){echo $value; break;}} ?>" class="form-control input-sm">
                         <?php if(isset($job_supervisor_contact_error)){ echo $job_supervisor_contact_error;}?>
+                        <span class="error_msg" id="job_supervisor_contact_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -1272,6 +1293,7 @@ if (loggedin()) {
                     <div class="col-sm-8">
                         <input type="email" name="job_supervisor_email[]" id="job_supervisor_email" value="<?php if(isset($job_supervisor_email)){foreach ($job_supervisor_email as $value){echo $value; break;}} ?>" class="form-control input-sm">
                         <?php if(isset($job_supervisor_email_error)){echo $job_supervisor_email_error;} ?>
+                        <span class="error_msg" id="job_supervisor_email_error_massage"></span>
                     </div>
                 </div>
             </div>
@@ -1287,6 +1309,7 @@ if (loggedin()) {
                 <div class="col-sm-10">
                     <textarea name="job_responsibility[]" id="job_responsibility" class="form-control input-sm" placeholder="Please Write down responsibilities you had during employment"><?php if(isset($job_responsibility)){foreach ($job_responsibility as $value){echo $value; break;}} ?></textarea>
                     <?php if(isset($job_responsibility_error)){echo $job_responsibility_error;}?>
+                    <span class="error_msg" id="job_responsibility_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1301,6 +1324,7 @@ if (loggedin()) {
                 <div class="col-sm-10">
                     <textarea name="job_leaveReason[]" id="job_leaveReason" class="form-control input-sm"><?php if(isset($job_leaveReason)){foreach ($job_leaveReason as $value){echo $value; break;}} ?></textarea>
                     <?php if(isset($job_leaveReason_error)){echo $job_leaveReason_error;}?>
+                    <span class="error_msg" id="job_leaveReason_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -1358,6 +1382,7 @@ if (loggedin()) {
                                 <option value="HSC" <?php if(isset($thesis)){foreach ($thesis as $value){if($value == 'HSC'){echo 'selected';}}} ?> >HSC</option>
                                 <option value="SSC(Regular)" <?php if(isset($thesis)){foreach ($thesis as $value){if($value == 'SSC(Regular)'){echo 'selected';}}} ?> >SSC(Regular)</option>
                             </select>
+                            <span class="error_msg" id="thesis_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1368,6 +1393,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="thesis_title[]" id="thesis_title" value="<?php if(isset($thesis_title)){foreach ($thesis_title as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="thesis_title_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1378,6 +1404,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="date" name="thesis_published[]" id="thesis_published" value="<?php if(isset($thesis_published)){foreach ($thesis_published as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="thesis_published_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1388,6 +1415,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="thesis_reference[]" id="thesis_reference" value="<?php if(isset($thesis_reference)){foreach ($thesis_reference as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="thesis_reference_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1398,6 +1426,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="thesis_year[]" id="thesis_year" value="<?php if(isset($thesis_year)){foreach ($thesis_year as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="thesis_year_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1427,12 +1456,12 @@ if (loggedin()) {
 
                     <div class="col-sm-12">
                         <textarea name="thesis_social_activity" id="thesis_social_activity" class="form-control input-sm"><?Php if(isset($thesis_social_activity)){echo $thesis_social_activity;} ?></textarea>
+                        <span class="error_msg" id="thesis_social_activity_error_massage"></span>
                     </div>
                 </div>
             </div>
         </div>
         <!-- end of row -->
-
 
         <div class="row">
             <hr/>
@@ -1446,7 +1475,7 @@ if (loggedin()) {
                 </div>
             </div>
         </div>
-        <!-- end of row -->
+
 
     </div>
     <!-- end of #thesis_5th -->
@@ -1468,6 +1497,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="training_title[]" id="training_title" value="<?php if(isset($training_title)){foreach ($training_title as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="training_title_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1478,6 +1508,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="training_org[]" id="training_org" value="<?php if(isset($training_org)){foreach ($training_org as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="training_org_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1488,6 +1519,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="training_country[]" id="training_country" value="<?php if(isset($training_country)){foreach ($training_country as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="training_country_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1498,6 +1530,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="training_year[]" id="training_year" value="<?php if(isset($training_year)){foreach ($training_year as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="training_year_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1508,6 +1541,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="training_duration[]" id="training_duration" value="<?php if(isset($training_duration)){foreach ($training_duration as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="training_duration_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1518,9 +1552,11 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <select name="training_day[]" id="training_day" class="form-control input-sm">
+                                <option value="-99">- Select Day/Hours -</option>
                                 <option value="Day" <?php if(isset($training_day)){foreach($training_day as $value){if($value == 'Day'){echo 'selected';}}} ?> >Day</option>
                                 <option value="Hours" <?php if(isset($training_day)){foreach($training_day as $value){if($value == 'Hours'){echo 'selected';}}} ?> >Hours</option>
                             </select>
+                            <span class="error_msg" id="training_day_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1552,6 +1588,14 @@ if (loggedin()) {
             </div>
         </div>
         <!-- end of row -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group text-center">
+                    <input type="submit"  name="cv_submit" id="" class="btn btn-success btn-md" value="Submit">
+                </div>
+            </div>
+        </div>
+
 
     </div>
     <!-- end #training_6th -->
@@ -1570,6 +1614,7 @@ if (loggedin()) {
                     <select name="main_language" id="main_language" class="form-control input-sm">
                         <option value="Bangla" <?php if(isset($main_language) and $main_language == 'Bangla'){echo 'selected';} ?> >Bangla</option>
                         <option value="English" <?php if(isset($main_language) and $main_language == 'English'){echo 'selected';} ?> >English</option>
+                        <span class="error_msg" id="main_language_error_massage"></span>
                     </select>
                     <br/>
 
@@ -1605,6 +1650,7 @@ if (loggedin()) {
                                     <option value="English" <?php if(isset($other_language) and $other_language == 'English'){echo 'selected';} ?> >English</option>
                                     <option value="hindi" <?php if(isset($other_language) and $other_language == 'hindi'){echo 'selected';} ?> >hindi</option>
                                 </select>
+                                <span class="error_msg" id="other_language_error_massage"></span>
                             </td>
 
                             <td>
@@ -1878,6 +1924,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_name[]" id="reference_name" value="<?php if(isset($reference_name)){foreach($reference_name as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_name_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1888,6 +1935,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_designation[]" id="reference_designation" value="<?php if(isset($reference_designation)){foreach($reference_designation as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_designation_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1898,6 +1946,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_org[]" id="reference_org" value="<?php if(isset($reference_org)){foreach($reference_org as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_org_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1908,6 +1957,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_phone[]" id="reference_phone" value="<?php if(isset($reference_phone)){foreach($reference_phone as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_phone_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1918,6 +1968,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_email[]" id="reference_email" value="<?php if(isset($reference_email)){foreach($reference_email as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_email_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1929,6 +1980,7 @@ if (loggedin()) {
 
                         <div class="col-sm-12">
                             <input type="text" name="reference_relation[]" id="reference_relation" value="<?php if(isset($reference_relation)){foreach($reference_relation as $value){echo $value; break;}} ?>" class="form-control input-sm">
+                            <span class="error_msg" id="reference_relation_error_massage"></span>
                         </div>
                     </div>
                 </div>
@@ -1974,6 +2026,17 @@ if (loggedin()) {
     <div class="row">
         <h4>Do you have any relative working experience in IOM Bangladesh?</h4>
 
+        <div class="form-group">
+            <div class="col-sm-4">
+                <select name="relative_working_exp" id="relative_working_exp" data-dependent_select="select" class="form-control input-sm">
+                    <option value="-99">- Select One -</option>
+                    <option value="Yes" >Yes</option>
+                    <option value="No" >No</option>
+                </select>
+                <span class="error_msg" id="relative_working_error_massage"></span>
+            </div>
+        </div>
+    <div class="relative_working_experience">
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="other_relative_name" class="control-label col-sm-12 upper_label">Name of the Relative</label>
@@ -2005,11 +2068,25 @@ if (loggedin()) {
             </div>
         </div>
     </div>
+
+    </div>
     <!-- end .row -->
 
     <div class="row">
         <h4>Do you have any previous working experience in IOM Bangladesh?</h4>
 
+        <div class="form-group">
+            <div class="col-sm-4">
+                <select name="previous_working_exp" id="previous_working_exp" data-dependent_select="select" class="form-control input-sm">
+                    <option value="-99">- Select One -</option>
+                    <option value="Yes" >Yes</option>
+                    <option value="No" >No</option>
+                </select>
+                <span class="error_msg" id="previous_working_exp_error_massage"></span>
+            </div>
+        </div>
+
+        <div class="previous_working_experience">
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="other_prev_exp_designation" class="control-label col-sm-12 upper_label">Previous Designation</label>
@@ -2040,11 +2117,27 @@ if (loggedin()) {
                 </div>
             </div>
         </div>
+
+    </div>
+
     </div>
     <!-- end .row -->
 
     <div class="row">
         <h4>Did you appear for interview in IOM Bangladesh?</h4>
+
+        <div class="form-group">
+            <div class="col-sm-4">
+                <select name="appear_interview" id="appear_interview" data-dependent_select="select" class="form-control input-sm">
+                    <option value="-99">- Select One -</option>
+                    <option value="Yes" >Yes</option>
+                    <option value="No" >No</option>
+                </select>
+                <span class="error_msg" id="appear_interview_error_massage"></span>
+            </div>
+        </div>
+
+        <div class="appear_interview_display">
 
         <div class="col-sm-6">
             <div class="form-group">
@@ -2066,11 +2159,26 @@ if (loggedin()) {
             </div>
         </div>
 
+        </div>
+
     </div>
     <!-- end .row -->
 
     <div class="row">
         <h4>Did you have any criminal record?</h4>
+
+        <div class="form-group">
+            <div class="col-sm-4">
+                <select name="criminal_record" id="criminal_record" data-dependent_select="select" class="form-control input-sm">
+                    <option value="-99">- Select One -</option>
+                    <option value="Yes" >Yes</option>
+                    <option value="No" >No</option>
+                </select>
+                <span class="error_msg" id="criminal_record_error_massage"></span>
+            </div>
+        </div>
+
+        <div class="criminal_record_display">
 
         <div class="col-sm-6">
             <div class="form-group">
@@ -2093,6 +2201,8 @@ if (loggedin()) {
             </div>
         </div>
 
+        </div>
+
     </div>
     <!-- end .row -->
 
@@ -2101,9 +2211,9 @@ if (loggedin()) {
 
         <div class="col-sm-12">
             <div class="form-group">
-                <label for="other_affiliate_list" class="control-label col-sm-6 upper_label">List all organizations with which you are or have been affiliated. This list is to include all affiliations, whether social, professional, fraternal etc</label>
-
-                <div class="col-sm-6">
+                <label for="other_affiliate" class="control-label col-sm-6 upper_label">List all organizations with which you are
+                    or have been affiliated. This list is to include all affiliations, whether social, professional, fraternal etc</label>
+                <div class="col-sm-6" id="">
                     <textarea name="other_affiliate_list" id="other_affiliate_list" class="form-control input-sm"><?php if(isset($other_affiliate_list)){echo $other_affiliate_list;} ?></textarea>
                 </div>
             </div>
@@ -2229,330 +2339,18 @@ if (loggedin()) {
     </div> <!-- end of container-->
 
 
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+
 <?php
 } else {
     echo '<p class="alert-danger text-center">You are not logged in!</p>';
-    echo '<meta http-equiv="refresh" content="2; url=http://geekymock.tk/jobportal/" />';
+    echo '<meta http-equiv="refresh" content="2; url=index.php" />';
 } // end of checking logged in or not
 ?>
-<script>
-    $(document).ready(function(){
-
-        // Error validatoin function
-        function validatoin_function(field_id, err_msg_span_id, err_msg) {
-            if ($(field_id).data('select')) {
-                var select_field = $(field_id).val();
-                if(select_field == '-99'){
-                   // alert(select_field);
-                    error = true;
-                    $(err_msg_span_id).html(err_msg);
-                    $(err_msg_span_id).show();
-                } else {
-                    error = false;
-                    $(err_msg_span_id).hide();
-                }
-            }else if($(field_id).data('textarea')) {
-                var textarea_field = $(field_id).val();
-                if(textarea_field == ''){
-                   // alert(textarea_field);
-                    error = true;
-                    $(err_msg_span_id).html(err_msg);
-                    $(err_msg_span_id).show();
-                } else {
-                    error = false;
-                    $(err_msg_span_id).hide();
-                }
-            }else if($(field_id).data('text')){
-                var text_field = $(field_id).val();
-                if (text_field == '') {
-                    error = true;
-                    $(err_msg_span_id).html(err_msg);
-                    $(err_msg_span_id).show();
-                } else {
-                    error = false;
-                    $(err_msg_span_id).hide();
-                }
-            }else if($(field_id).data('dependent_select')){
-                var select_field = $(field_id).val();
-                if (select_field == '-99') {
-                    error = true;
-                    $(err_msg_span_id).html(err_msg);
-                    $(err_msg_span_id).show();
-                }else if(select_field == 'Yes'){
-                    error = false;
-                   $(err_msg_span_id).hide();
-                             alert('yes');
-                }else if(select_field == 'No'){
-                    error = false;
-                    $(err_msg_span_id).hide();
-                    alert('No');
-                }
-            }else{
-                var mobile1_value = $(field_id).val();
-                if (mobile1_value.length < 11 || mobile1_value.length > 15) {
-                  //  alert(mobile1_value);
-                    error = true;
-                    $(err_msg_span_id).html(err_msg);
-                    $(err_msg_span_id).show();
-                } else {
-                    error = false;
-                    $(err_msg_span_id).hide();
-                }
-            }
-        }
-
-
-
-
-
-
-        /***********************
-         * focusout() functions
-         ********************* */
-
-        /*******************************************
-         Contact Details  Section
-         ********************************************/
-        // #mobile1
-        $('#mobile1').focusout(function () {
-            validatoin_function('#mobile1', '#mobile1_error_massage', 'Error message');
-        });
-
-        //#nationality
-        $('#nationality').focusout(function () {
-            validatoin_function('#nationality', '#nationality_error_massage', 'Error message');
-        });
-
-        //#permanent_address
-        $('#permanent_address').focusout(function () {
-            validatoin_function('#permanent_address', '#permanent_address_error_massage', 'Error message');
-        });
-
-        //#present_address
-        $('#present_address').focusout(function () {
-            validatoin_function('#present_address', '#present_address_error_massage', 'Error message');
-        });
-
-        /*******************************************
-         Parsonal Details  Section
-        ********************************************/
-        // #birth_date
-        $('#birth_date').focusout(function () {
-            validatoin_function('#birth_date', '#birth_date_error_massage', 'Empty Date of Birth');
-        });
-
-        // #marital_status
-        $('#marital_status').focusout(function () {
-            validatoin_function('#marital_status', '#marital_status_error_massage', 'Please Select Status');
-        });
-
-        // #passport_no
-        $('#passport_no').focusout(function () {
-            validatoin_function('#passport_no', '#passport_no_error_massage', 'Empty Passport No');
-        });
-
-        // #passport_exp_date
-        $('#passport_exp_date').focusout(function () {
-            validatoin_function('#passport_exp_date', '#passport_exp_date_error_massage', 'Empty Passport Expiry Date');
-        });
-
-        // #National ID
-        $('#national_id').focusout(function () {
-            validatoin_function('#national_id', '#national_id_error_massage', 'Empty National ID');
-        });
-
-        // #Gender
-        $('#gender').focusout(function () {
-            validatoin_function('#gender', '#gender_error_massage', 'Please Select Status');
-        });
-
-        // #disability
-        $('#disability').focusout(function () {
-            validatoin_function('#disability', '#disability_error_massage', 'Please Select Status');
-        });
-
-
-
-        /********************
-         * click() functions
-         ****************** */
-
-        /*******************************************
-         Contact Details  Section
-         ********************************************/
-        $('#contact_details_btn_next').click(function(){
-            //mobile1
-            validatoin_function('#mobile1', '#mobile1_error_massage', 'Error message');
-
-            // nationality
-            validatoin_function('#nationality', '#nationality_error_massage', 'Error message');
-
-            // Present address
-            validatoin_function('#present_address', '#present_address_error_massage', 'Error message');
-
-            // permanent_address
-            validatoin_function('#permanent_address', '#permanent_address_error_massage', 'Error message');
-
-            if(error === true){
-
-            }else{
-                $('#contact_details_1st').css('display', 'none');
-                $('#personal_details_2nd').css('display', 'block');
-            }
-        });
-
-        /*******************************************
-            Parsonal Details  Section
-         ********************************************/
-        $('#personal_details_btn_next').click(function(){
-            // birth_date
-            validatoin_function('#birth_date', '#birth_date_error_massage', 'Empty Date of Birth');
-
-            // #marital_status
-            validatoin_function('#marital_status', '#marital_status_error_massage', 'Please Select Status');
-
-            // #passport_no
-            validatoin_function('#passport_no', '#passport_no_error_massage', 'Empty Passport No');
-
-            // #passport_exp_date
-            validatoin_function('#passport_exp_date', '#passport_exp_date_error_massage', 'Empty Passport Expiry Date');
-
-            // #National ID
-            validatoin_function('#national_id', '#national_id_error_massage', 'Empty National ID');
-
-            // #Gender
-            validatoin_function('#gender', '#gender_error_massage', 'Please Select Status');
-
-            // #disability
-            validatoin_function('#disability', '#disability_error_massage', 'Please Select Status');
-
-            if(error === true){
-
-            }else{
-                $('#academic_qualification_3rd').css('display', 'block');
-                $('#personal_details_2nd').css('display', 'none');
-            }
-        });
-
-
-
-
-
-    }); // end of checking document ready function
-
-
-
-
-</script>
-<!-- including script file -->
-
-<!--<script>-->
-<!--    $(document).ready(function(){-->
-<!---->
-<!--        $('#tst_submit').click(function(a){-->
-<!--            a.preventDefault();-->
-<!---->
-<!--            // Contact details-->
-<!--            var mobile1 = $('#mobile1').val();-->
-<!--            var nationality = $('#nationality').find(':selected').val();-->
-<!--            var present_address = $('#present_address').val();-->
-<!--            var permanent_address = $('#permanent_address').val();-->
-<!---->
-<!--            // Personal details-->
-<!--            var birth_date = $('#birth_date').val();-->
-<!--            var marital_status = $('#marital_status').find(':selected').val();-->
-<!--            var passport_no = $('#marital_status').val();-->
-<!--            var passport_exp_date = $('#passport_exp_date').val();-->
-<!--            var national_id = $('#national_id').val();-->
-<!--            var gender = $('input[name=gender]:checked').val();-->
-<!--            var disability = $('input[name=disability]:checked').val();-->
-<!--            var disability_details = $('#disability_details').val();-->
-<!---->
-<!--            // Academic details-->
-<!--            var degree = $('#degree').find(':selected').val();-->
-<!--            var major_sub = $('#major_sub').val();-->
-<!--            var grade = $('#grade').val();-->
-<!--            var passing_year = $('#passing_year').val();-->
-<!--            var institution = $('#institution').val();-->
-<!---->
-<!---->
-<!--            // Job details-->
-<!--            var job_org = $('#job_org').val();-->
-<!--            var job_address = $('#job_address').val();-->
-<!--            var job_lastPosition = $('#job_lastPosition').val();-->
-<!--            var job_from = $('#job_from').val();-->
-<!--            var job_to = $('#job_to').val();-->
-<!--            var job_contact = $('#job_contact').val();-->
-<!--            var job_salary = $('#job_salary').val();-->
-<!--            var job_allowance = $('#job_allowance').val();-->
-<!--            var job_total = $('#job_total').val();-->
-<!--            var job_staff = $('#job_staff').val();-->
-<!--            var job_supervisor_name = $('#job_supervisor_name').val();-->
-<!--            var job_supervisor_designation = $('#job_supervisor_designation').val();-->
-<!--            var job_supervisor_contact = $('#job_supervisor_contact').val();-->
-<!--            var job_supervisor_email = $('#job_supervisor_email').val();-->
-<!--            var job_responsibility = $('#job_responsibility').val();-->
-<!--            var job_leaveReason = $('#job_leaveReason').val();-->
-<!---->
-<!---->
-<!--            // Thesis-->
-<!--            var thesis = $('#thesis').find(':selected').val();-->
-<!--            var thesis_title = $('#thesis_title').val();-->
-<!--            var thesis_published = $('#thesis_published').val();-->
-<!--            var thesis_reference = $('#thesis_reference').val();-->
-<!--            var thesis_year = $('#thesis_year').val();-->
-<!---->
-<!--            // Language-->
-<!--            var marital_status = $('#marital_status').find(':selected').val();-->
-<!---->
-<!--            var error = false;-->
-<!--            if(mobile1.length < 1){-->
-<!--                error = true;-->
-<!--                alert(mobile1);-->
-<!--            }-->
-<!---->
-<!--            if(error == true){-->
-<!--                alert('error true');-->
-<!--            }else{-->
-<!--                alert('error false');-->
-<!--                alert(mobile1);-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-
-
-<!--<script>-->
-<!--    $(document).ready(function(){-->
-<!--        $('#test_submit').click(function(e){-->
-<!--            e.preventDefault();-->
-<!---->
-<!--            var mobile1 = $('#mobile1').val();-->
-<!---->
-<!--            if(mobile1.length > 3){-->
-<!--                alert('Mobile');-->
-<!--                var  r = 'hello';-->
-<!--                $.ajax({-->
-<!--                    url: "insert.php",-->
-<!--                    method: "POST",-->
-<!--                    data: $("#cv_form").serialize(),-->
-<!--                    r,-->
-<!--                    success: function(data){-->
-<!--                        alert("success");-->
-<!---->
-<!--                        //$('form').trigger('reset');-->
-<!--                        $('#response').html(data);-->
-<!--                    }-->
-<!--                });-->
-<!--            }else{-->
-<!--                alert('Empty')-->
-<!--            }-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
-<script src="js/script.js"></script>
 
 
 </body>
