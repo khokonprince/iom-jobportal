@@ -2033,16 +2033,17 @@ if (loggedin()) {
                     <option value="Yes" >Yes</option>
                     <option value="No" >No</option>
                 </select>
-                <span class="error_msg" id="relative_working_error_massage"></span>
+                <span class="error_msg" id="relative_working_exp_error_massage"></span>
             </div>
         </div>
-    <div class="relative_working_experience">
+    <div id="relative_working_experience">
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="other_relative_name" class="control-label col-sm-12 upper_label">Name of the Relative</label>
 
                 <div class="col-sm-12">
                     <input type="text" name="other_relative_name" id="other_relative_name" value="<?php if(isset($other_relative_name)){echo $other_relative_name;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_relative_name_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2053,6 +2054,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_relative_designation" id="other_relative_designation" value="<?php if(isset($other_relative_designation)){echo $other_relative_designation;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_relative_designation_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2064,6 +2066,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_relative_organization" id="other_relative_organization" value="<?php if(isset($other_relative_organization)){echo $other_relative_organization;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_relative_organization_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2086,13 +2089,14 @@ if (loggedin()) {
             </div>
         </div>
 
-        <div class="previous_working_experience">
+        <div id="previous_working_experience">
         <div class="col-sm-4">
             <div class="form-group">
                 <label for="other_prev_exp_designation" class="control-label col-sm-12 upper_label">Previous Designation</label>
 
                 <div class="col-sm-12">
                     <input type="text" name="other_prev_exp_designation" id="other_prev_exp_designation" value="<?php if(isset($other_prev_exp_designation)){echo $other_prev_exp_designation;} ?>"class="form-control input-sm">
+                    <span class="error_msg" id="other_prev_exp_designation_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2103,6 +2107,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_prev_exp_length" id="other_prev_exp_length" value="<?php if(isset($other_prev_exp_length)){echo $other_prev_exp_length;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_prev_exp_length_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2114,6 +2119,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_prev_exp_supervisor" id="other_prev_exp_supervisor" value="<?php if(isset($other_prev_exp_supervisor)){echo $other_prev_exp_supervisor;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_prev_exp_supervisor_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2137,7 +2143,7 @@ if (loggedin()) {
             </div>
         </div>
 
-        <div class="appear_interview_display">
+        <div id="appear_interview_display">
 
         <div class="col-sm-6">
             <div class="form-group">
@@ -2145,6 +2151,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_applied_position" id="other_applied_position" value="<?php if(isset($other_applied_position)){echo $other_applied_position;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_applied_position_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2155,6 +2162,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_applied_year" id="other_applied_year" value="<?php if(isset($other_applied_year)){echo $other_applied_year;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_applied_year_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2178,7 +2186,7 @@ if (loggedin()) {
             </div>
         </div>
 
-        <div class="criminal_record_display">
+        <div id="criminal_record_display">
 
         <div class="col-sm-6">
             <div class="form-group">
@@ -2187,6 +2195,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_criminal_accusation" id="other_criminal_accusation" value="<?php if(isset($other_criminal_accusation)){echo $other_criminal_accusation;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_criminal_accusation_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2197,6 +2206,7 @@ if (loggedin()) {
 
                 <div class="col-sm-12">
                     <input type="text" name="other_criminal_year" id="other_criminal_year" value="<?php if(isset($other_criminal_year)){echo $other_criminal_year;} ?>" class="form-control input-sm">
+                    <span class="error_msg" id="other_criminal_year_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2212,10 +2222,12 @@ if (loggedin()) {
         <div class="col-sm-12">
             <div class="form-group">
                 <label for="other_affiliate" class="control-label col-sm-6 upper_label">List all organizations with which you are
-                    or have been affiliated. This list is to include all affiliations, whether social, professional, fraternal etc</label>
-                <div class="col-sm-6" id="">
+                  or have been affiliated. This list is to include all affiliations, whether social, professional, fraternal etc</label>
+                    <div class="col-sm-6">
                     <textarea name="other_affiliate_list" id="other_affiliate_list" class="form-control input-sm"><?php if(isset($other_affiliate_list)){echo $other_affiliate_list;} ?></textarea>
-                </div>
+                        <span class="error_msg" id="other_affiliate_list_error_massage"></span>
+
+                    </div>
             </div>
         </div>
 
@@ -2225,6 +2237,7 @@ if (loggedin()) {
 
                 <div class="col-sm-6">
                     <textarea name="other_work_consider" id="other_work_consider" class="form-control input-sm"><?php if(isset($other_work_consider)){echo $other_work_consider;} ?></textarea>
+                    <span class="error_msg" id="other_work_consider_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2233,9 +2246,15 @@ if (loggedin()) {
             <div class="form-group">
                 <label for="other_travel" class="control-label col-sm-6 upper_label">Are you willing to accept a post requiring travel?</label>
 
-                <div class="col-sm-6">
-                    <input type="radio" name="other_travel" id="other_travel_yes" value="Yes" <?php if(isset($other_travel) and $other_travel == 'Yes'){ echo 'checked'; } ?> > <label for="other_travel_yes">Yes </label> &nbsp; &nbsp;
-                    <input type="radio" name="other_travel" id="other_travel_no" value="No" <?php if(isset($other_travel) and $other_travel == 'No'){ echo 'checked'; } ?> > <label for="other_travel_no"> No </label>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <select name="other_travel" id="other_travel" data-dependent_select="select" class="form-control input-sm">
+                            <option value="-99">- Select One -</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                        </select>
+                        <span class="error_msg" id="other_travel_error_massage"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2244,9 +2263,15 @@ if (loggedin()) {
             <div class="form-group">
                 <label for="other_short_emp" class="control-label col-sm-6 upper_label">Would you accept short term employment?</label>
 
-                <div class="col-sm-6">
-                    <input type="radio" name="other_short_emp" id="other_short_emp_yes" value="Yes" <?php if(isset($other_short_emp) and $other_short_emp == 'Yes'){ echo 'checked'; } ?> > <label for="other_short_emp_yes">Yes</label> &nbsp; &nbsp;
-                    <input type="radio" name="other_short_emp" id="other_short_emp_no" value="No" <?php if(isset($other_short_emp) and $other_short_emp == 'No'){ echo 'checked'; } ?> > <label for="other_short_emp_no">No</label>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <select name="other_short_emp" id="other_short_emp" data-dependent_select="select" class="form-control input-sm">
+                            <option value="-99">- Select One -</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                        </select>
+                        <span class="error_msg" id="other_short_emp_error_massage"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2256,9 +2281,15 @@ if (loggedin()) {
                 <label for="other_field_assesment" class="control-label col-sm-6 upper_label">Would you accept an
                     emergency field assignment at short notice?</label>
 
-                <div class="col-sm-6">
-                    <input type="radio" name="other_field_assesment" id="other_field_assesment_emp_yes" value="Yes" <?php if(isset($other_field_assesment) and $other_field_assesment == 'Yes'){ echo 'checked'; } ?> > <label for="other_field_assesment_emp_yes">Yes</label> &nbsp; &nbsp;
-                    <input type="radio" name="other_field_assesment" id="other_field_assesment_emp_no" value="No" <?php if(isset($other_field_assesment) and $other_field_assesment == 'No'){ echo 'checked'; } ?> > <label for="other_field_assesment_emp_no">No</label>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <select name="other_field_assesment" id="other_field_assesment" data-dependent_select="select" class="form-control input-sm">
+                            <option value="-99">- Select One -</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                        </select>
+                        <span class="error_msg" id="other_field_assesment_error_massage"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2271,6 +2302,7 @@ if (loggedin()) {
 
                 <div class="col-sm-6">
                     <textarea name="other_notice" id="other_notice" class="form-control input-sm"><?php if(isset($other_notice)){echo $other_notice;} ?></textarea>
+                    <span class="error_msg" id="other_notice_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2282,12 +2314,17 @@ if (loggedin()) {
                     imprisoned or placed on probation in connection with such a proceeding, or have you ever been
                     arrested or required to deposit bail or collateral for the violation of any law or regulation,
                     civil or military (excluding traffic violations)?
-
                 </label>
 
-                <div class="col-sm-6">
-                    <input type="radio" name="other_arrest" id="other_arrest_yes" value="Yes" <?php if(isset($other_arrest) and $other_arrest == 'Yes'){ echo 'checked'; } ?> > <label for="other_arrest_yes"> Yes</label> &nbsp; &nbsp;
-                    <input type="radio" name="other_arrest" id="other_arrest_no" value="No" <?php if(isset($other_arrest) and $other_arrest == 'No'){ echo 'checked'; } ?> > <label for="other_arrest_yes"> No </label>
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <select name="other_arrest" id="other_arrest" data-dependent_select="select" class="form-control input-sm">
+                            <option value="-99">- Select One -</option>
+                            <option value="Yes" >Yes</option>
+                            <option value="No" >No</option>
+                        </select>
+                        <span class="error_msg" id="other_arrest_error_massage"></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2300,6 +2337,7 @@ if (loggedin()) {
 
                 <div class="col-sm-6">
                     <textarea name="other_arrest_brief" id="other_arrest_brief" class="form-control input-sm"><?php if(isset($other_arrest_brief)){echo $other_arrest_brief;}?></textarea>
+                    <span class="error_msg" id="other_arrest_brief_error_massage"></span>
                 </div>
             </div>
         </div>
@@ -2312,6 +2350,14 @@ if (loggedin()) {
         <div class="col-sm-12">
             <div class="form-group text-right">
                 <button type="button" id="other_details_previous" class="btn btn-warning btn-xs">< Previous</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <hr/>
+        <div class="col-sm-12">
+            <div class="form-group text-right">
+                <button type="button" id="test_sub" class="btn btn-warning btn-xs"> testsub </button>
             </div>
         </div>
     </div>

@@ -187,12 +187,12 @@ $(document).ready(function(){
                 $('#disability_error_massage').show();
             }else if(national_id_value == 'Yes'){
 
-                //$('#disability_details_textarea').css('display', 'none');
-                $('#disability_details_textarea').show();
+                $('#disability_details_textarea').css('display', 'block');
+                $('#disability_error_massage').hide();
             }else if(national_id_value == 'No'){
 
-               // $('#disability_details_textarea').css('display', 'block');
-                $('#disability_details_textarea').hide();
+               $('#disability_details_textarea').css('display', 'none');
+                $('#disability_error_massage').hide();
             }
 
         });
@@ -206,12 +206,12 @@ $(document).ready(function(){
                 $('#dependents_error_massage').show();
             }else if(dependents_value == 'Yes'){
 
-               // $('#dependents_section').css('display', 'none');
-                $('#dependents_error_massage').show();
+                $('#dependents_section').css('display', 'block');
+                $('#dependents_error_massage').hide();
             }else if(dependents_value == 'No'){
 
-               // $('#dependents_section').css('display', 'block');
-                $('#dependents_section').hide();
+                $('#dependents_section').css('display', 'none');
+                $('#dependents_error_massage').hide();
             }
 
         });
@@ -750,6 +750,323 @@ $(document).ready(function(){
             }
 
         });
+
+
+        /*******************************************
+         Other  Details Section
+         ********************************************/
+
+          //Do you have any relative working experience in IOM Bangladesh?
+            // #relative_working_exp
+        $('#relative_working_exp').focusout(function () {
+            var relative_working_exp_value = $('#relative_working_exp').val();
+            if(relative_working_exp_value == '-99'){
+
+                $('#relative_working_exp_error_massage').html('Please Select status');
+                $('#relative_working_exp_error_massage').show();
+                $('#relative_working_experience').hide();
+            }else if(relative_working_exp_value == 'Yes'){
+
+                // #other_relative_name
+                $('#other_relative_name').focusout(function () {
+                    var other_relative_name_value = $('#other_relative_name').val();
+                    if(other_relative_name_value == ''){
+                        $('#other_relative_name_error_massage').html('Enter other relative name');
+                        $('#other_relative_name_error_massage').show();
+                    } else {
+
+                        $('#other_relative_name_error_massage').hide();
+                    }
+
+                });
+
+                // #other_relative_designation
+                $('#other_relative_designation').focusout(function () {
+                    var other_relative_designation_value = $('#other_relative_designation').val();
+                    if(other_relative_designation_value == ''){
+                        $('#other_relative_designation_error_massage').html('Enter other relative designation');
+                        $('#other_relative_designation_error_massage').show();
+                    } else {
+
+                        $('#other_relative_designation_error_massage').hide();
+                    }
+                });
+
+                // #other_relative_organization
+                $('#other_relative_organization').focusout(function () {
+                    var other_relative_organization_value = $('#other_relative_organization').val();
+                    if(other_relative_organization_value == ''){
+                        $('#other_relative_organization_error_massage').html('Enter other relative organization');
+                        $('#other_relative_organization_error_massage').show();
+                    } else {
+
+                        $('#other_relative_organization_error_massage').hide();
+                    }
+
+                });
+
+                $('#relative_working_experience').show();
+                $('#relative_working_exp_error_massage').hide();
+            }else if(relative_working_exp_value == 'No'){
+
+                  $('#relative_working_experience').hide();
+                $('#relative_working_exp_error_massage').hide();
+            }
+
+        });
+
+        //Do you have any previous working experience in IOM Bangladesh?
+        // #previous_working_exp
+        $('#previous_working_exp').focusout(function () {
+            var previous_working_experience_value = $('#previous_working_exp').val();
+            if(previous_working_experience_value == '-99'){
+
+                $('#previous_working_exp_error_massage').html('Please Select status');
+                $('#previous_working_exp_error_massage').show();
+                $('#previous_working_experience').hide();
+            }else if(previous_working_experience_value == 'Yes'){
+
+                // #other_prev_exp_designation
+                $('#other_prev_exp_designation').focusout(function () {
+                    var other_prev_exp_designation_value = $('#other_prev_exp_designation').val();
+                    if(other_prev_exp_designation_value == ''){
+                        $('#other_prev_exp_designation_error_massage').html('Enter other exp designation');
+                        $('#other_prev_exp_designation_error_massage').show();
+                    } else {
+
+                        $('#other_prev_exp_designation_error_massage').hide();
+                    }
+                });
+
+                // #other_prev_exp_length
+                $('#other_prev_exp_length').focusout(function () {
+                    var other_prev_exp_length_value = $('#other_prev_exp_length').val();
+                    if(other_prev_exp_length_value == ''){
+                        $('#other_prev_exp_length_error_massage').html('Enter other exp length');
+                        $('#other_prev_exp_length_error_massage').show();
+                    } else {
+
+                        $('#other_prev_exp_length_error_massage').hide();
+                    }
+                });
+
+                // #other_prev_exp_supervisor
+                $('#other_prev_exp_supervisor').focusout(function () {
+                    var other_prev_exp_supervisor_value = $('#other_prev_exp_supervisor').val();
+                    if(other_prev_exp_supervisor_value == ''){
+                        $('#other_prev_exp_supervisor_error_massage').html('Enter other exp supervisor');
+                        $('#other_prev_exp_supervisor_error_massage').show();
+                    } else {
+
+                        $('#other_prev_exp_supervisor_error_massage').hide();
+                    }
+                });
+
+
+
+                $('#previous_working_experience').show();
+                $('#previous_working_exp_error_massage').hide();
+            }else if(previous_working_experience_value == 'No'){
+
+                $('#previous_working_experience').hide();
+                $('#previous_working_exp_error_massage').hide();
+            }
+
+        });
+
+        //Did you appear for interview in IOM Bangladesh?
+         // #appear_interview
+        $('#appear_interview').focusout(function () {
+            var appear_interview_value = $('#appear_interview').val();
+            if(appear_interview_value == '-99'){
+
+                $('#appear_interview_error_massage').html('Please Select status');
+                $('#appear_interview_error_massage').show();
+                $('#appear_interview_display').hide();
+            }else if(appear_interview_value == 'Yes'){
+
+                // #other_applied_position
+                $('#other_applied_position').focusout(function () {
+                    var other_applied_position_value = $('#other_applied_position').val();
+                    if(other_applied_position_value == ''){
+                        $('#other_applied_position_error_massage').html('Enter other applied position');
+                        $('#other_applied_position_error_massage').show();
+                    } else {
+
+                        $('#other_applied_position_error_massage').hide();
+                    }
+                });
+
+                // #other_applied_year
+                $('#other_applied_year').focusout(function () {
+                    var other_applied_year_value = $('#other_applied_year').val();
+                    if(other_applied_year_value == ''){
+                        $('#other_applied_year_error_massage').html('Enter other applied year');
+                        $('#other_applied_year_error_massage').show();
+                    } else {
+
+                        $('#other_applied_year_error_massage').hide();
+                    }
+                });
+
+
+                $('#appear_interview_display').show();
+                $('#appear_interview_error_massage').hide();
+            }else if(appear_interview_value == 'No'){
+
+                $('#appear_interview_display').hide();
+                $('#appear_interview_error_massage').hide();
+            }
+
+        });
+
+
+        //Did you have any criminal record?
+        // #criminal_record
+        $('#criminal_record').focusout(function () {
+            var criminal_record_value = $('#criminal_record').val();
+            if(criminal_record_value == '-99'){
+
+                $('#criminal_record_error_massage').html('Please Select status');
+                $('#criminal_record_error_massage').show();
+                $('#criminal_record_display').hide();
+            }else if(criminal_record_value == 'Yes'){
+
+                // #other_criminal_accusation
+                $('#other_criminal_accusation').focusout(function () {
+                    var other_criminal_accusation_value = $('#other_criminal_accusation').val();
+                    if(other_criminal_accusation_value == ''){
+                        $('#other_criminal_accusation_error_massage').html('Enter other criminal accusation');
+                        $('#other_criminal_accusation_error_massage').show();
+                    } else {
+
+                        $('#other_criminal_accusation_error_massage').hide();
+                    }
+                });
+
+                // #other_criminal_year
+                $('#other_criminal_year').focusout(function () {
+                    var other_criminal_year_value = $('#other_criminal_year').val();
+                    if(other_criminal_year_value == ''){
+                        $('#other_criminal_year_error_massage').html('Enter other criminal year');
+                        $('#other_criminal_year_error_massage').show();
+                    } else {
+
+                        $('#other_criminal_year_error_massage').hide();
+                    }
+                });
+
+
+                $('#criminal_record_display').show();
+                $('#criminal_record_error_massage').hide();
+            }else if(criminal_record_value == 'No'){
+
+                $('#criminal_record_display').hide();
+                $('#criminal_record_error_massage').hide();
+            }
+
+        });
+
+        ////List all organizations with which you are or have been affiliated.
+        //    This list is to include all
+        //affiliations, whether social, professional, fraternal etc
+
+        // #other_affiliate_list
+        $('#other_affiliate_list').focusout(function () {
+            var other_affiliate_list_value = $('#other_affiliate_list').val();
+            if(other_affiliate_list_value == ''){
+                $('#other_affiliate_list_error_massage').html('Enter other affiliate list');
+                $('#other_affiliate_list_error_massage').show();
+            } else {
+
+                $('#other_affiliate_list_error_massage').hide();
+            }
+        });
+
+// #other_work_consider
+        $('#other_work_consider').focusout(function () {
+            var other_work_consider_value = $('#other_work_consider').val();
+            if(other_work_consider_value == ''){
+                $('#other_work_consider_error_massage').html('Enter other work consider');
+                $('#other_work_consider_error_massage').show();
+            } else {
+
+                $('#other_work_consider_error_massage').hide();
+            }
+        });
+
+        // #other_travel
+        $('#other_travel').focusout(function () {
+            var other_travel_value = $('#other_travel').val();
+            if(other_travel_value == '-99'){
+                $('#other_travel_error_massage').html('Enter select ststus');
+                $('#other_travel_error_massage').show();
+            } else {
+
+                $('#other_travel_error_massage').hide();
+            }
+        });
+
+        // #other_short_emp
+        $('#other_short_emp').focusout(function () {
+            var other_short_emp_value = $('#other_short_emp').val();
+            if(other_short_emp_value == '-99'){
+                $('#other_short_emp_error_massage').html('Enter select ststus');
+                $('#other_short_emp_error_massage').show();
+            } else {
+
+                $('#other_short_emp_error_massage').hide();
+            }
+        });
+
+        // #other_field_assesment
+        $('#other_field_assesment').focusout(function () {
+            var other_field_assesment_value = $('#other_field_assesment').val();
+            if(other_field_assesment_value == '-99'){
+                $('#other_field_assesment_error_massage').html('Enter select ststus');
+                $('#other_field_assesment_error_massage').show();
+            } else {
+
+                $('#other_field_assesment_error_massage').hide();
+            }
+        });
+
+        // #other_notice
+        $('#other_notice').focusout(function () {
+            var other_notice_value = $('#other_notice').val();
+            if(other_notice_value == ''){
+                $('#other_notice_error_massage').html('Enter other notice');
+                $('#other_notice_error_massage').show();
+            } else {
+
+                $('#other_notice_error_massage').hide();
+            }
+        });
+
+        // #other_arrest
+        $('#other_arrest').focusout(function () {
+            var other_arrest_value = $('#other_arrest').val();
+            if(other_arrest_value == '-99'){
+                $('#other_arrest_error_massage').html('Enter select status');
+                $('#other_arrest_error_massage').show();
+            } else {
+
+                $('#other_arrest_error_massage').hide();
+            }
+        });
+
+        // #other_arrest_brief
+        $('#other_arrest_brief').focusout(function () {
+            var other_arrest_brief_value = $('#other_arrest_brief').val();
+            if(other_arrest_brief_value == ''){
+                $('#other_arrest_brief_error_massage').html('Enter other arrest');
+                $('#other_arrest_brief_error_massage').show();
+            } else {
+
+                $('#other_arrest_brief_error_massage').hide();
+            }
+        });
+
 
 
 
@@ -1463,7 +1780,6 @@ $(document).ready(function(){
         });// end Training/Workshop Section
 
 
-
         /*******************************************
              Reference Section
          ********************************************/
@@ -1538,9 +1854,6 @@ $(document).ready(function(){
                 $('#reference_relation_error_massage').hide();
             }
 
-
-
-
             //   Reference next btn validation
 
             if($.inArray('true', Reference_array) != '-1'){
@@ -1554,6 +1867,296 @@ $(document).ready(function(){
             }
 
         });// end  Reference
+
+
+        /*******************************************
+              Other Details Section
+         ********************************************/
+
+        $('#test_sub').click(function() {
+
+            var other_detais_array = [];
+
+           // Do you have any relative working experience in IOM Bangladesh?
+            // #relative_working_exp
+            var relative_working_exp_value = $('#relative_working_exp').val();
+            if (relative_working_exp_value == '-99') {
+                other_detais_array[51] = "true";
+                $('#relative_working_exp_error_massage').html('Empty select relative working experience');
+                $('#relative_working_exp_error_massage').show();
+            }else if (relative_working_exp_value == 'Yes'){
+
+                // #other_relative_name
+                var other_relative_name_value = $('#other_relative_name').val();
+                if (other_relative_name_value == '') {
+                    other_detais_array[51] = "true";
+                    $('#other_relative_name_error_massage').html('Empty other relation name');
+                    $('#other_relative_name_error_massage').show();
+                }else {
+                    other_detais_array[51] = "false";
+                    $('#other_relative_name_error_massage').hide();
+                }
+
+                // #other_relative_designation
+                var other_relative_designation_value = $('#other_relative_designation').val();
+                if (other_relative_designation_value == '') {
+                    other_detais_array[52] = "true";
+                    $('#other_relative_designation_error_massage').html('Empty other relation designation');
+                    $('#other_relative_designation_error_massage').show();
+                }else {
+                    other_detais_array[52] = "false";
+                    $('#other_relative_designation_error_massage').hide();
+                }
+
+                // #other_relative_organization
+                var other_relative_organization_value = $('#other_relative_organization').val();
+                if (other_relative_organization_value == '') {
+                    other_detais_array[53] = "true";
+                    $('#other_relative_organization_error_massage').html('Empty other relation organization');
+                    $('#other_relative_organization_error_massage').show();
+                }else {
+                    other_detais_array[53] = "false";
+                    $('#other_relative_organization_error_massage').hide();
+                }
+
+                $('#relative_working_exp_error_massage').hide();
+                $('#relative_working_experience').css('display', 'block');
+            }else if (relative_working_exp_value == 'No'){
+                $('#relative_working_exp_error_massage').hide();
+                $('#relative_working_experience').css('display', 'none');
+            }
+
+
+            // Do you have any previous working experience in IOM Bangladesh?
+           // previous_working_exp
+
+            var previous_working_exp_value = $('#previous_working_exp').val();
+            if (previous_working_exp_value == '-99') {
+                other_detais_array[55] = "true";
+                $('#previous_working_exp_error_massage').html('Empty select relative working experience');
+                $('#previous_working_exp_error_massage').show();
+                $('#previous_working_experience').hide();
+            }else if (previous_working_exp_value == 'Yes'){
+
+                // #other_prev_exp_designation
+                var other_prev_exp_designation_value = $('#other_prev_exp_designation').val();
+                if (other_prev_exp_designation_value == '') {
+                    other_detais_array[56] = "true";
+                    $('#other_prev_exp_designation_error_massage').html('Empty other designation');
+                    $('#other_prev_exp_designation_error_massage').show();
+                }else {
+                    other_detais_array[56] = "false";
+                    $('#other_prev_exp_designation_error_massage').hide();
+                }
+
+                // #other_prev_exp_length
+                var other_prev_exp_length_value = $('#other_prev_exp_length').val();
+                if (other_prev_exp_length_value == '') {
+                    other_detais_array[57] = "true";
+                    $('#other_prev_exp_length_error_massage').html('Empty other exp length');
+                    $('#other_prev_exp_length_error_massage').show();
+                }else {
+                    other_detais_array[57] = "false";
+                    $('#other_prev_exp_length_error_massage').hide();
+                }
+
+                // #other_prev_exp_supervisor
+                var other_prev_exp_supervisor_value = $('#other_prev_exp_supervisor').val();
+                if (other_prev_exp_supervisor_value == '') {
+                    other_detais_array[58] = "true";
+                    $('#other_prev_exp_supervisor_error_massage').html('Empty other exp supervisor');
+                    $('#other_prev_exp_supervisor_error_massage').show();
+                }else {
+                    other_detais_array[58] = "false";
+                    $('#other_prev_exp_supervisor_error_massage').hide();
+                }
+
+                $('#previous_working_exp_error_massage').hide();
+                $('#previous_working_experience').css('display', 'block');
+            }else if (previous_working_exp_value == 'No'){
+                $('#previous_working_exp_error_massage').hide();
+                $('#previous_working_experience').css('display', 'none');
+            }
+
+
+            // Did you appear for interview in IOM Bangladesh?
+            //appear_interview
+
+            var appear_interview_value = $('#appear_interview').val();
+            if (appear_interview_value == '-99') {
+                other_detais_array[59] = "true";
+                $('#appear_interview_error_massage').html('Empty select status');
+                $('#appear_interview_error_massage').show();
+                $('#appear_interview_display').hide();
+            }else if (appear_interview_value == 'Yes'){
+
+                // #other_applied_position
+                var other_applied_position_value = $('#other_applied_position').val();
+                if (other_applied_position_value == '') {
+                    other_detais_array[60] = "true";
+                    $('#other_applied_position_error_massage').html('Empty other applied position');
+                    $('#other_applied_position_error_massage').show();
+                }else {
+                    other_detais_array[60] = "false";
+                    $('#other_applied_position_error_massage').hide();
+                }
+
+                // #other_applied_year
+                var other_applied_year_value = $('#other_applied_year').val();
+                if (other_applied_year_value == '') {
+                    other_detais_array[61] = "true";
+                    $('#other_applied_year_error_massage').html('Empty other applied year');
+                    $('#other_applied_year_error_massage').show();
+                }else {
+                    other_detais_array[61] = "false";
+                    $('#other_applied_year_error_massage').hide();
+                }
+
+                $('#appear_interview_error_massage').hide();
+                $('#appear_interview_display').css('display', 'block');
+            }else if (appear_interview_value == 'No'){
+                $('#appear_interview_error_massage').hide();
+                $('#appear_interview_display').css('display', 'none');
+            }
+
+
+            // Did you have any criminal record?
+            //appear_interview
+
+            var criminal_record_value = $('#criminal_record').val();
+            if (criminal_record_value == '-99') {
+                other_detais_array[61] = "true";
+                $('#criminal_record_error_massage').html('Empty select status');
+                $('#criminal_record_error_massage').show();
+                $('#criminal_record_display').hide();
+            }else if (criminal_record_value == 'Yes'){
+
+                // #other_criminal_accusation
+                var other_criminal_accusation_value = $('#other_criminal_accusation').val();
+                if (other_criminal_accusation_value == '') {
+                    other_detais_array[62] = "true";
+                    $('#other_criminal_accusation_error_massage').html('Empty criminal accusation');
+                    $('#other_criminal_accusation_error_massage').show();
+                }else {
+                    other_detais_array[62] = "false";
+                    $('#other_criminal_accusation_error_massage').hide();
+                }
+
+                // #other_criminal_year
+                var other_criminal_year_value = $('#other_criminal_year').val();
+                if (other_criminal_year_value == '') {
+                    other_detais_array[63] = "true";
+                    $('#other_criminal_year_error_massage').html('Empty other criminal');
+                    $('#other_criminal_year_error_massage').show();
+                }else {
+                    other_detais_array[63] = "false";
+                    $('#other_criminal_year_error_massage').hide();
+                }
+
+
+                $('#criminal_record_error_massage').hide();
+                $('#criminal_record_display').css('display', 'block');
+            }else if (criminal_record_value == 'No'){
+                $('#criminal_record_error_massage').hide();
+                $('#criminal_record_display').css('display', 'none');
+            }
+
+            // List all organizations with which you are or have been affiliated. This list is to
+            // include all affiliations, whether social, professional, fraternal etc
+
+            // #other_affiliate_list
+            var other_affiliate_list_value = $('#other_affiliate_list').val();
+            if (other_affiliate_list_value == '') {
+                other_detais_array[71] = "true";
+                $('#other_affiliate_list_error_massage').html('Empty other affiliate list');
+                $('#other_affiliate_list_error_massage').show();
+            }else {
+                other_detais_array[71] = "false";
+                $('#other_criminal_year_error_massage').hide();
+            }
+
+            // #other_work_consider
+            var other_work_consider_value = $('#other_work_consider').val();
+            if (other_work_consider_value == '') {
+                other_detais_array[72] = "true";
+                $('#other_work_consider_error_massage').html('Empty other work consider');
+                $('#other_work_consider_error_massage').show();
+            }else {
+                other_detais_array[72] = "false";
+                $('#other_work_consider_error_massage').hide();
+            }
+
+            // #other_travel
+            var other_travel_value = $('#other_travel').val();
+            if (other_travel_value == '-99') {
+                other_detais_array[73] = "true";
+                $('#other_travel_error_massage').html('Empty other travel');
+                $('#other_travel_error_massage').show();
+            }else {
+                other_detais_array[73] = "false";
+                $('#other_travel_error_massage').hide();
+            }
+
+            // #other_short_emp
+            var other_short_emp_value = $('#other_short_emp').val();
+            if (other_short_emp_value == '-99') {
+                other_detais_array[74] = "true";
+                $('#other_short_emp_error_massage').html('Empty other short employment');
+                $('#other_short_emp_error_massage').show();
+            }else {
+                other_detais_array[74] = "false";
+                $('#other_short_emp_error_massage').hide();
+            }
+
+            // #other_field_assesment
+            var other_field_assesment_value = $('#other_field_assesment').val();
+            if (other_field_assesment_value == '-99') {
+                other_detais_array[75] = "true";
+                $('#other_field_assesment_error_massage').html('Empty other field assesment');
+                $('#other_field_assesment_error_massage').show();
+            }else {
+                other_detais_array[75] = "false";
+                $('#other_field_assesment_error_massage').hide();
+            }
+
+            // #other_notice
+            var other_notice_value = $('#other_notice').val();
+            if (other_notice_value == '') {
+                other_detais_array[76] = "true";
+                $('#other_notice_error_massage').html('Empty other notice');
+                $('#other_notice_error_massage').show();
+            }else {
+                other_detais_array[76] = "false";
+                $('#other_notice_error_massage').hide();
+            }
+
+            // #other_arrest
+            var other_arrest_value = $('#other_arrest').val();
+            if (other_arrest_value == '-99') {
+                other_detais_array[77] = "true";
+                $('#other_arrest_error_massage').html('Empty other arrest');
+                $('#other_arrest_error_massage').show();
+            }else {
+                other_detais_array[77] = "false";
+                $('#other_arrest_error_massage').hide();
+            }
+
+            // #other_arrest_brief
+            var other_arrest_brief_value = $('#other_arrest_brief').val();
+            if (other_arrest_brief_value == '') {
+                other_detais_array[78] = "true";
+                $('#other_arrest_brief_error_massage').html('Empty other arrest brief');
+                $('#other_arrest_brief_error_massage').show();
+            }else {
+                other_detais_array[78] = "false";
+                $('#other_arrest_brief_error_massage').hide();
+            }
+
+
+
+
+
+        });// end  Other Details
 
 
 
@@ -1888,19 +2491,41 @@ $(document).ready(function(){
 
 
    //
-   // $('#contact_details_1st').hide();
-   // $('#personal_details_2nd').hide();
-   // $('#academic_qualification_3rd').hide();
-   // $('#academic_qualification_3rd').hide();
+   //$('#contact_details_1st').hide();
+   //$('#personal_details_2nd').hide();
+   //$('#academic_qualification_3rd').hide();
+   //$('#academic_qualification_3rd').hide();
    //
-   // $('#personal_details_2nd').hide();
-   // $('#job_details_4th').hide();
-   // $('#thesis_5th').hide();
-   // $('#training_6th').hide();
-   // $('#language_skill_7th').hide();
+   //$('#personal_details_2nd').hide();
+   //$('#job_details_4th').hide();
+   //$('#thesis_5th').hide();
+   //$('#training_6th').hide();
+   //$('#language_skill_7th').hide();
    //
    //
    //$('#other_details_11th').css('display', 'block');
+
+
+
+
+
+    /*****************************************************
+     *   All select yes no display hide show function
+     *  *************************************************/
+
+        // parsonal Details secton
+    $('#disability_details_textarea').css('display', 'none');
+
+    $('#dependents_section').css('display', 'none');
+
+    // Other Details secton
+    $('#relative_working_experience').css('display', 'none');
+
+    $('#previous_working_experience').css('display', 'none');
+
+    $('#appear_interview_display').css('display', 'none');
+
+    $('#criminal_record_display').css('display', 'none');
 
 
 
